@@ -5,7 +5,9 @@
  */
 package com.rkppl.kuis1;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -17,8 +19,9 @@ public class MahasiwaTest {
     
     private Mahasiswa m;
     
-    @BeforeClass
+    @Before
     public void start() {
+        m = new Mahasiswa();
         System.out.println("Before -- ");
     }
     
@@ -29,6 +32,20 @@ public class MahasiwaTest {
     
     @Test
     public void testNama() {
-        Assert.assertNotNull("Tidak Boleh Kosong", m.setNama(""));
+        Assert.assertNotNull("Tidak Boleh Kosong", m.getNama());
+    }
+    
+    @Test
+    public void testFloat() {
+        
+        m.setNama("Aku");
+        Mahasiswa s = new Mahasiswa();
+        s.setNama("Gia");
+        Assert.assertNotSame("Berbeda Objek", m.getNama(), s.getNama());
+    }
+    
+    @After
+    public void end() {
+        System.out.println("End Test");
     }
 }
