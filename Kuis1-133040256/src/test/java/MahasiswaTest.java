@@ -33,17 +33,17 @@ public class MahasiswaTest {
         m = new Mahasiswa();
         m.setNama("hii");
         m.setNrp("");
-        System.out.println("Before -- ");
+        System.out.println("Before");
     }
     
     @Test
     public void testNrp() {
-        Assert.assertNull("Boleh Kosong", m.getNrp());
+        assertNull("Boleh Kosong", m.getNrp());
     }
     
     @Test
     public void testNama() {
-        Assert.assertNotNull("Tidak Boleh Kosong", m.getNama());
+        assertNotNull("Tidak Boleh Kosong", m.getNama());
     }
     
     @Test
@@ -51,12 +51,12 @@ public class MahasiswaTest {
         m.setNama("Aku");
         Mahasiswa s = new Mahasiswa();
         s.setNama("Gia");
-        Assert.assertNotSame("Berbeda Objek", m.getNama(), s.getNama());
+        assertNotSame("Berbeda Objek", m.getNama(), s.getNama());
     }
     
     @After
     public void end() {
-        System.out.println("End Test");
+        System.out.println("After");
     }
     
     
